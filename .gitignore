@@ -60,3 +60,6 @@ htmlcov/
 *.tmp
 *.temp
 .playwright-mcp/
+
+# Research documents (keep local only)
+Research_Report.pdf
