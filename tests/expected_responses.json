@@ -1,0 +1,171 @@
+{
+    "expected_responses": [
+        {
+            "query_id": "q1",
+            "expected_answer_contains": [
+                "subset of artificial intelligence",
+                "learn from experience",
+                "without being explicitly programmed"
+            ],
+            "expected_source": "machine_learning_intro.txt",
+            "notes": "Should define ML as a subset of AI that learns from data"
+        },
+        {
+            "query_id": "q2",
+            "expected_answer_contains": [
+                "supervised learning",
+                "unsupervised learning",
+                "reinforcement learning"
+            ],
+            "expected_source": "machine_learning_intro.txt",
+            "notes": "Should list all three main types of ML"
+        },
+        {
+            "query_id": "q3",
+            "expected_answer_contains": [
+                "labeled data",
+                "unlabeled data",
+                "supervised",
+                "unsupervised"
+            ],
+            "expected_source": "machine_learning_intro.txt",
+            "notes": "Should contrast labeled vs unlabeled training data"
+        },
+        {
+            "query_id": "q4",
+            "expected_answer_contains": [
+                "perceptron",
+                "input layer",
+                "weights",
+                "activation function"
+            ],
+            "expected_source": "deep_learning.txt",
+            "notes": "Should describe basic neural network structure"
+        },
+        {
+            "query_id": "q5",
+            "expected_answer_contains": [
+                "feedforward",
+                "convolutional",
+                "recurrent",
+                "transformer"
+            ],
+            "expected_source": "deep_learning.txt",
+            "notes": "Should list major neural network architectures"
+        },
+        {
+            "query_id": "q6",
+            "expected_answer_contains": [
+                "Retrieval Augmented Generation",
+                "information retrieval",
+                "text generation",
+                "LLM"
+            ],
+            "expected_source": "rag_overview.txt",
+            "notes": "Should define RAG and its purpose"
+        },
+        {
+            "query_id": "q7",
+            "expected_answer_contains": [
+                "document store",
+                "embedding model",
+                "vector database",
+                "retriever",
+                "language model"
+            ],
+            "expected_source": "rag_overview.txt",
+            "notes": "Should list the five core components"
+        },
+        {
+            "query_id": "q8",
+            "expected_answer_contains": [
+                "forward pass",
+                "backward pass",
+                "gradient",
+                "update weights"
+            ],
+            "expected_source": "deep_learning.txt",
+            "notes": "Should explain the backpropagation algorithm steps"
+        },
+        {
+            "query_id": "q9",
+            "expected_answer_contains": [
+                "sigmoid",
+                "ReLU",
+                "tanh",
+                "softmax"
+            ],
+            "expected_source": "deep_learning.txt",
+            "notes": "Should list common activation functions"
+        },
+        {
+            "query_id": "q10",
+            "expected_answer_contains": [
+                "LangChain",
+                "LlamaIndex"
+            ],
+            "expected_source": "rag_overview.txt",
+            "notes": "Should mention popular RAG frameworks"
+        },
+        {
+            "query_id": "q11",
+            "expected_answer_contains": [
+                "self-attention",
+                "positional encoding",
+                "BERT",
+                "GPT"
+            ],
+            "expected_source": "deep_learning.txt",
+            "notes": "Should describe transformer key features"
+        },
+        {
+            "query_id": "q12",
+            "expected_answer_contains": [
+                "accuracy",
+                "precision",
+                "recall",
+                "F1"
+            ],
+            "expected_source": "machine_learning_intro.txt",
+            "notes": "Should list common evaluation metrics"
+        },
+        {
+            "query_id": "q13",
+            "expected_answer_contains": [
+                "chunk",
+                "fixed-size",
+                "semantic",
+                "overlap"
+            ],
+            "expected_source": "rag_overview.txt",
+            "notes": "Should explain chunking strategies"
+        },
+        {
+            "query_id": "q14",
+            "expected_answer_contains": [
+                "disease prediction",
+                "drug discovery",
+                "medical image"
+            ],
+            "expected_source": "machine_learning_intro.txt",
+            "notes": "Should list healthcare applications"
+        },
+        {
+            "query_id": "q15",
+            "expected_answer_contains": [
+                "embedding similarity",
+                "keyword matching",
+                "semantic",
+                "BM25"
+            ],
+            "expected_source": "rag_overview.txt",
+            "notes": "Should contrast the two retrieval approaches"
+        }
+    ],
+    "evaluation_criteria": {
+        "relevance": "Answer addresses the question directly",
+        "accuracy": "Answer contains correct information from source documents",
+        "completeness": "Answer covers key aspects of the topic",
+        "grounding": "Answer is based on retrieved documents, not hallucinated"
+    }
+}

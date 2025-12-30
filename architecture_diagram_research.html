@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RAG System Architecture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: white;
+            padding: 30px;
+        }
+        .diagram-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+        }
+        .figure-title {
+            text-align: center;
+            font-size: 11pt;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        
+        /* Main architecture box */
+        .architecture {
+            border: 2px solid #000;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .system-label {
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 12pt;
+        }
+        
+        /* Pipeline sections */
+        .pipeline {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1.5px solid #333;
+            position: relative;
+            background: #fafafa;
+        }
+        
+        .pipeline-label {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #fafafa;
+            padding: 0 8px;
+            font-size: 10pt;
+            font-style: italic;
+        }
+        
+        /* Flow containers */
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        
+        /* Component boxes */
+        .component {
+            border: 1.5px solid #000;
+            padding: 12px 8px;
+            text-align: center;
+            min-width: 100px;
+            background: white;
+            position: relative;
+        }
+        
+        .component.rounded {
+            border-radius: 20px;
+        }
+        
+        .component.database {
+            border-radius: 0;
+            background: linear-gradient(to bottom, #e8e8e8 0%, #e8e8e8 15%, white 15%, white 85%, #e8e8e8 85%, #e8e8e8 100%);
+            border-width: 2px;
+        }
+        
+        .component.dashed {
+            border-style: dashed;
+        }
+        
+        .component-name {
+            font-size: 9pt;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        
+        .component-detail {
+            font-size: 8pt;
+            color: #444;
+            font-style: italic;
+        }
+        
+        /* Arrows */
+        .arrow {
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+            font-size: 18px;
+            color: #000;
+        }
+        
+        .arrow-line {
+            width: 30px;
+            height: 2px;
+            background: #000;
+            position: relative;
+        }
+        
+        .arrow-line::after {
+            content: '';
+            position: absolute;
+            right: -1px;
+            top: -4px;
+            border: 5px solid transparent;
+            border-left: 8px solid #000;
+        }
+        
+        .arrow-down {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px 0;
+        }
+        
+        .arrow-down .arrow-line {
+            width: 2px;
+            height: 25px;
+        }
+        
+        .arrow-down .arrow-line::after {
+            right: -4px;
+            top: auto;
+            bottom: -1px;
+            border: 5px solid transparent;
+            border-top: 8px solid #000;
+            border-left: none;
+        }
+        
+        /* Vertical connector for shared components */
+        .connector {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .vertical-line {
+            width: 2px;
+            height: 40px;
+            background: #000;
+            position: absolute;
+            top: 100%;
+        }
+        
+        /* Section divider */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0 20px 0;
+        }
+        
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: #999;
+            border-top: 1px dashed #999;
+        }
+        
+        .divider-text {
+            padding: 0 15px;
+            font-size: 9pt;
+            color: #666;
+            font-style: italic;
+        }
+        
+        /* Legend */
+        .legend {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 9pt;
+        }
+        
+        .legend-box {
+            width: 30px;
+            height: 18px;
+            border: 1.5px solid #000;
+        }
+        
+        .legend-box.rounded {
+            border-radius: 10px;
+        }
+        
+        .legend-box.database {
+            background: linear-gradient(to bottom, #e8e8e8 0%, #e8e8e8 20%, white 20%, white 80%, #e8e8e8 80%, #e8e8e8 100%);
+        }
+        
+        .legend-box.dashed {
+            border-style: dashed;
+        }
+        
+        /* Two-row layout for query pipeline */
+        .flow-two-row {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .flow-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0;
+        }
+        
+        .flow-row.centered {
+            justify-content: center;
+        }
+        
+        /* Shared component styling */
+        .shared-component {
+            border: 2px solid #000;
+            background: #f0f0f0;
+        }
+        
+        /* Figure caption */
+        .figure-caption {
+            text-align: center;
+            font-size: 10pt;
+            margin-top: 20px;
+            padding-top: 10px;
+        }
+        
+        .figure-number {
+            font-weight: bold;
+        }
+
+        /* Annotations */
+        .annotation {
+            font-size: 8pt;
+            color: #555;
+            position: absolute;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram-container">
+        
+        <div class="architecture">
+            <div class="system-label">RAG-Based Question Answering System</div>
+            
+            <!-- Ingestion Pipeline -->
+            <div class="pipeline">
+                <div class="pipeline-label">Offline Ingestion Pipeline</div>
+                <div class="flow">
+                    <div class="component rounded">
+                        <div class="component-name">Document<br>Corpus</div>
+                        <div class="component-detail">PDF (n=45)</div>
+                    </div>
+                    
+                    <div class="arrow"><div class="arrow-line"></div></div>
+                    
+                    <div class="component">
+                        <div class="component-name">Document<br>Loader</div>
+                        <div class="component-detail">PyMuPDF</div>
+                    </div>
+                    
+                    <div class="arrow"><div class="arrow-line"></div></div>
+                    
+                    <div class="component">
+                        <div class="component-name">Text<br>Chunker</div>
+                        <div class="component-detail">size=1000, overlap=200</div>
+                    </div>
+                    
+                    <div class="arrow"><div class="arrow-line"></div></div>
+                    
+                    <div class="component shared-component" id="embedding-model">
+                        <div class="component-name">Embedding<br>Model</div>
+                        <div class="component-detail">text-embedding-3-large</div>
+                    </div>
+                    
+                    <div class="arrow"><div class="arrow-line"></div></div>
+                    
+                    <div class="component database">
+                        <div class="component-name">Vector<br>Database</div>
+                        <div class="component-detail">ChromaDB</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div class="section-divider">
+                <div class="divider-line"></div>
+                <div class="divider-text">Runtime Boundary</div>
+                <div class="divider-line"></div>
+            </div>
+            
+            <!-- Query Pipeline -->
+            <div class="pipeline">
+                <div class="pipeline-label">Online Query Pipeline</div>
+                <div class="flow-two-row">
+                    <div class="flow-row">
+                        <div class="component rounded">
+                            <div class="component-name">User<br>Query</div>
+                            <div class="component-detail">q ∈ Natural Language</div>
+                        </div>
+                        
+                        <div class="arrow"><div class="arrow-line"></div></div>
+                        
+                        <div class="component shared-component">
+                            <div class="component-name">Embedding<br>Model</div>
+                            <div class="component-detail">E(q) → ℝᵈ</div>
+                        </div>
+                        
+                        <div class="arrow"><div class="arrow-line"></div></div>
+                        
+                        <div class="component">
+                            <div class="component-name">Similarity<br>Search</div>
+                            <div class="component-detail">k-NN, k=4</div>
+                        </div>
+                        
+                        <div class="arrow"><div class="arrow-line"></div></div>
+                        
+                        <div class="component database">
+                            <div class="component-name">Vector<br>Database</div>
+                            <div class="component-detail">HNSW Index</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-row centered" style="margin-left: 200px;">
+                        <div class="component dashed">
+                            <div class="component-name">Retrieved<br>Context</div>
+                            <div class="component-detail">D = {d₁, d₂, ..., dₖ}</div>
+                        </div>
+                        
+                        <div class="arrow"><div class="arrow-line"></div></div>
+                        
+                        <div class="component">
+                            <div class="component-name">Prompt<br>Constructor</div>
+                            <div class="component-detail">P(q, D)</div>
+                        </div>
+                        
+                        <div class="arrow"><div class="arrow-line"></div></div>
+                        
+                        <div class="component" style="background: #e8e8e8;">
+                            <div class="component-name">Large Language<br>Model</div>
+                            <div class="component-detail">Claude Sonnet 4</div>
+                        </div>
+                        
+                        <div class="arrow"><div class="arrow-line"></div></div>
+                        
+                        <div class="component rounded">
+                            <div class="component-name">Generated<br>Response</div>
+                            <div class="component-detail">r + citations</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box rounded"></div>
+                <span>Input/Output</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box"></div>
+                <span>Processing Module</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box database"></div>
+                <span>Data Store</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box dashed"></div>
+                <span>Intermediate Data</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #e8e8e8;"></div>
+                <span>External API</span>
+            </div>
+        </div>
+        
+        <!-- Figure Caption -->
+        <div class="figure-caption">
+            <span class="figure-number">Figure 1.</span> System architecture of the RAG-based question answering system showing the offline ingestion pipeline (top) and online query pipeline (bottom). The embedding model and vector database are shared components between both pipelines.
+        </div>
+        
+    </div>
+</body>
+</html>

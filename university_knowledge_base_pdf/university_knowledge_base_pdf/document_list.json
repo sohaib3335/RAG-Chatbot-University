@@ -1,0 +1,57 @@
+{
+  "academic_policies": [
+    {"id": "AP001", "title": "Undergraduate Grading System Policy", "filename": "undergraduate_grading_system.md"},
+    {"id": "AP002", "title": "Graduate Grading Scale and GPA Calculation", "filename": "graduate_grading_scale.md"},
+    {"id": "AP003", "title": "Academic Integrity and Honor Code", "filename": "academic_integrity_honor_code.md"},
+    {"id": "AP004", "title": "Plagiarism Detection and Consequences", "filename": "plagiarism_policy.md"},
+    {"id": "AP005", "title": "Class Attendance Policy", "filename": "attendance_policy.md"},
+    {"id": "AP006", "title": "Excused Absences and Documentation Requirements", "filename": "excused_absences.md"},
+    {"id": "AP007", "title": "Final Examination Procedures", "filename": "final_exam_procedures.md"},
+    {"id": "AP008", "title": "Midterm Examination Guidelines", "filename": "midterm_guidelines.md"},
+    {"id": "AP009", "title": "Academic Probation and Dismissal Policy", "filename": "academic_probation.md"},
+    {"id": "AP010", "title": "Grade Appeal Process", "filename": "grade_appeal_process.md"},
+    {"id": "AP011", "title": "Incomplete Grade Policy", "filename": "incomplete_grade_policy.md"},
+    {"id": "AP012", "title": "Pass/Fail Grading Option", "filename": "pass_fail_option.md"}
+  ],
+  "administrative_procedures": [
+    {"id": "ADM001", "title": "Course Registration Procedures", "filename": "course_registration.md"},
+    {"id": "ADM002", "title": "New Student Enrollment Guide", "filename": "new_student_enrollment.md"},
+    {"id": "ADM003", "title": "Official Transcript Request Process", "filename": "transcript_request.md"},
+    {"id": "ADM004", "title": "Course Add/Drop Procedures and Deadlines", "filename": "add_drop_procedures.md"},
+    {"id": "ADM005", "title": "Course Withdrawal Policy", "filename": "course_withdrawal.md"},
+    {"id": "ADM006", "title": "Change of Major or Minor Request", "filename": "change_major_minor.md"},
+    {"id": "ADM007", "title": "Student Records and FERPA Compliance", "filename": "ferpa_compliance.md"},
+    {"id": "ADM008", "title": "Degree Audit and Graduation Requirements", "filename": "degree_audit.md"},
+    {"id": "ADM009", "title": "Academic Calendar and Important Dates", "filename": "academic_calendar.md"},
+    {"id": "ADM010", "title": "Leave of Absence and Readmission", "filename": "leave_of_absence.md"}
+  ],
+  "student_services": [
+    {"id": "SS001", "title": "Counseling and Psychological Services", "filename": "counseling_services.md"},
+    {"id": "SS002", "title": "Student Health Center Services", "filename": "health_center_services.md"},
+    {"id": "SS003", "title": "Career Services and Job Placement", "filename": "career_services.md"},
+    {"id": "SS004", "title": "Disability Support Services", "filename": "disability_support.md"},
+    {"id": "SS005", "title": "Academic Tutoring and Learning Support", "filename": "tutoring_services.md"},
+    {"id": "SS006", "title": "International Student Services", "filename": "international_student_services.md"},
+    {"id": "SS007", "title": "Veterans Affairs and Military Student Support", "filename": "veterans_services.md"},
+    {"id": "SS008", "title": "Student Emergency Assistance Program", "filename": "emergency_assistance.md"}
+  ],
+  "financial_information": [
+    {"id": "FIN001", "title": "Tuition and Fee Schedule", "filename": "tuition_fees.md"},
+    {"id": "FIN002", "title": "Payment Plans and Options", "filename": "payment_plans.md"},
+    {"id": "FIN003", "title": "Financial Aid Application Process", "filename": "financial_aid_application.md"},
+    {"id": "FIN004", "title": "Federal Student Loan Programs", "filename": "federal_loans.md"},
+    {"id": "FIN005", "title": "Scholarship Opportunities and Eligibility", "filename": "scholarships.md"},
+    {"id": "FIN006", "title": "Work-Study Program Guidelines", "filename": "work_study.md"},
+    {"id": "FIN007", "title": "Tuition Refund Policy", "filename": "refund_policy.md"},
+    {"id": "FIN008", "title": "Satisfactory Academic Progress for Financial Aid", "filename": "sap_financial_aid.md"}
+  ],
+  "campus_resources": [
+    {"id": "CR001", "title": "University Library Services and Hours", "filename": "library_services.md"},
+    {"id": "CR002", "title": "IT Help Desk and Technical Support", "filename": "it_support.md"},
+    {"id": "CR003", "title": "Campus Recreation and Fitness Facilities", "filename": "recreation_facilities.md"},
+    {"id": "CR004", "title": "On-Campus Housing Options", "filename": "housing_options.md"},
+    {"id": "CR005", "title": "Dining Services and Meal Plans", "filename": "dining_services.md"},
+    {"id": "CR006", "title": "Campus Parking and Transportation", "filename": "parking_transportation.md"},
+    {"id": "CR007", "title": "Campus Safety and Security Services", "filename": "campus_safety.md"}
+  ]
+}

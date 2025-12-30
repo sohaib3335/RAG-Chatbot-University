@@ -1,0 +1,118 @@
+{
+    "test_queries": [
+        {
+            "id": "q1",
+            "query": "What is machine learning?",
+            "category": "definition",
+            "expected_topics": ["machine learning", "AI", "artificial intelligence"],
+            "difficulty": "easy"
+        },
+        {
+            "id": "q2",
+            "query": "What are the three types of machine learning?",
+            "category": "classification",
+            "expected_topics": ["supervised", "unsupervised", "reinforcement"],
+            "difficulty": "easy"
+        },
+        {
+            "id": "q3",
+            "query": "Explain the difference between supervised and unsupervised learning",
+            "category": "comparison",
+            "expected_topics": ["supervised", "unsupervised", "labeled", "unlabeled"],
+            "difficulty": "medium"
+        },
+        {
+            "id": "q4",
+            "query": "What is a neural network and what are its components?",
+            "category": "definition",
+            "expected_topics": ["neural network", "perceptron", "layers", "activation"],
+            "difficulty": "medium"
+        },
+        {
+            "id": "q5",
+            "query": "What are the different types of neural networks?",
+            "category": "classification",
+            "expected_topics": ["CNN", "RNN", "Transformer", "feedforward"],
+            "difficulty": "medium"
+        },
+        {
+            "id": "q6",
+            "query": "What is RAG and why is it used?",
+            "category": "definition",
+            "expected_topics": ["RAG", "retrieval", "augmented", "generation", "LLM"],
+            "difficulty": "medium"
+        },
+        {
+            "id": "q7",
+            "query": "What are the core components of a RAG system?",
+            "category": "architecture",
+            "expected_topics": ["embedding", "vector database", "retriever", "language model"],
+            "difficulty": "medium"
+        },
+        {
+            "id": "q8",
+            "query": "How does backpropagation work in neural networks?",
+            "category": "technical",
+            "expected_topics": ["backpropagation", "gradient", "forward pass", "backward pass"],
+            "difficulty": "hard"
+        },
+        {
+            "id": "q9",
+            "query": "What are activation functions and give examples?",
+            "category": "technical",
+            "expected_topics": ["activation", "ReLU", "sigmoid", "tanh", "softmax"],
+            "difficulty": "medium"
+        },
+        {
+            "id": "q10",
+            "query": "What frameworks are commonly used for RAG applications?",
+            "category": "tools",
+            "expected_topics": ["LangChain", "LlamaIndex", "framework"],
+            "difficulty": "easy"
+        },
+        {
+            "id": "q11",
+            "query": "What is the transformer architecture?",
+            "category": "technical",
+            "expected_topics": ["transformer", "attention", "BERT", "GPT"],
+            "difficulty": "hard"
+        },
+        {
+            "id": "q12",
+            "query": "How do you evaluate machine learning models?",
+            "category": "evaluation",
+            "expected_topics": ["accuracy", "precision", "recall", "F1"],
+            "difficulty": "medium"
+        },
+        {
+            "id": "q13",
+            "query": "What is the purpose of chunking in RAG systems?",
+            "category": "technical",
+            "expected_topics": ["chunking", "chunk", "overlap", "semantic"],
+            "difficulty": "medium"
+        },
+        {
+            "id": "q14",
+            "query": "What are the applications of machine learning in healthcare?",
+            "category": "application",
+            "expected_topics": ["healthcare", "disease", "medical", "diagnosis"],
+            "difficulty": "easy"
+        },
+        {
+            "id": "q15",
+            "query": "What is the difference between dense and sparse retrieval?",
+            "category": "comparison",
+            "expected_topics": ["dense", "sparse", "retrieval", "embedding", "keyword"],
+            "difficulty": "hard"
+        }
+    ],
+    "metadata": {
+        "total_queries": 15,
+        "categories": ["definition", "classification", "comparison", "technical", "architecture", "tools", "evaluation", "application"],
+        "difficulty_distribution": {
+            "easy": 4,
+            "medium": 8,
+            "hard": 3
+        }
+    }
+}
