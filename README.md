@@ -369,7 +369,7 @@ This project is developed for academic purposes as part of MSc Computing coursew
 
 ## 👤 Author
 
-Developed for CBRM (Cloud-Based Research Methods) Module
+Developed for CBRM (Computer-Based Research Methods) Module by Sohaib Farooq
 
 ---
 
